@@ -61,6 +61,7 @@ export interface BaseTextFieldProps extends Omit<FormControlProps, 'onChange'> {
   readOnly?: boolean;
   value?: any[];
   variant?: 'outlined' | 'standard' | 'filled';
+  [key:string]: any;
 }
 
 export interface StandardTextFieldProps extends BaseTextFieldProps {

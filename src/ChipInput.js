@@ -38,7 +38,8 @@ const styles = (theme) => {
         boxSizing: 'border-box'
       },
       '&$outlined': {
-        paddingTop: 14
+        paddingLeft: 8,
+        paddingTop: 8,
       },
       '&$filled': {
         paddingTop: 28
@@ -70,7 +71,9 @@ const styles = (theme) => {
         paddingTop: 4,
         paddingBottom: 12,
         marginTop: 4,
-        marginBottom: 4
+        paddingLeft: 4,
+        marginBottom: 4,
+        fontSize: 14,
       }
     },
     standard: {},
@@ -102,7 +105,11 @@ const styles = (theme) => {
       }
     },
     labelShrink: {
-      top: 0
+      top: 0,
+      backgroundColor: 'transparent',
+      '&$selected': {
+        display: 'none',
+      }
     },
     helperText: {
       marginBottom: -20
@@ -561,7 +568,7 @@ class ChipInput extends React.Component {
 
     const InputMore = {}
     if (variant === 'outlined') {
-      InputMore.notched = shrinkFloatingLabel
+      InputMore.notched = false
     }
 
     if (variant !== 'standard') {
@@ -592,7 +599,7 @@ class ChipInput extends React.Component {
           <InputLabel
             htmlFor={id}
             classes={{ root: cx(classes[variant], classes.label), shrink: classes.labelShrink }}
-            shrink={shrinkFloatingLabel}
+            shrink={true}
             focused={this.state.isFocused}
             variant={variant}
             ref={this.labelRef}
@@ -637,6 +644,7 @@ class ChipInput extends React.Component {
             readOnly={readOnly}
             {...InputProps}
             {...InputMore}
+            notched={false}
           />
         </div>
         {helperText && (
@@ -739,7 +747,6 @@ export const defaultChipRenderer = ({ value, text, isFocused, isDisabled, isRead
     className={className}
     style={{
       pointerEvents: isDisabled || isReadOnly ? 'none' : undefined,
-      backgroundColor: isFocused ? blue[300] : undefined
     }}
     onClick={handleClick}
     onDelete={handleDelete}
