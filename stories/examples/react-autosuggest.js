@@ -6,7 +6,7 @@ import match from 'autosuggest-highlight/match'
 import parse from 'autosuggest-highlight/parse'
 import Paper from '@mui/material/Paper'
 import MenuItem from '@mui/material/MenuItem'
-import { withStyles } from '@material-ui/styles'
+import { withStyles } from '@mui/styles'
 import ChipInput from '../../src/ChipInput'
 
 const suggestions = [
