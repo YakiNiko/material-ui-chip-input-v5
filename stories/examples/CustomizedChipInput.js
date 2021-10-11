@@ -1,5 +1,5 @@
 import React from 'react'
-import withStyles from '@mui/styles/withStyles'
+import { withStyles }  from '@mui/styles'
 import ChipInput from '../../src/ChipInput'
 
 const styles = {
